@@ -7,12 +7,16 @@ fetch("./attractions.json")
   .then(data => {
 		attractions = data;
 		console.log('a',attractions);
-	}).then(attractions.sort(function(a,b){
-    return b.Visitors - a.Visitors; 
-  }).slice(0,4));
+	});
 
-console.log('top', attractions);
+function d(category){
+  category.sort
+  }
+}
 
+let nums=[{"w":'love', "n":5},{"w":'go', "n":3},{"w": 'die', "n":7}];
+
+console.log('num',nums.sort(d("n")));
 
 
 
