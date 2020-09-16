@@ -1,4 +1,9 @@
+
 // TODO: load the dataset 
+
+
+
+
 
 
 let attractions;
@@ -6,15 +11,15 @@ fetch("./attractions.json")
   .then(response => response.json())
   .then(data => {
 		attractions = data;
-		console.log('a',attractions);
-	});
+		console.log('a',attractions);})
+  .then(filterData(attractions));
 
 
 
 
   
 let nums=[{"w":"love", "n":5},{"w":"go", "n":3},{"w": "die", "n":7}];
-  ;
+  
 
 
 
@@ -22,14 +27,10 @@ let nums=[{"w":"love", "n":5},{"w":"go", "n":3},{"w": "die", "n":7}];
 console.log('num',nums.sort(function(a,b){return b.n-a.n;}).slice(0,2));
 
 
-
-
 function filterData(category) {
-
   
-  console.log('order',attractions.sort(function(a,b){return b.Visitors-a.Visitors;}).slice(0,2));
 
-  //attractions.sort((a,b) => b.Visitors - a.Visitors).slice(0,4);
+  category.sort((a,b) => b.Visitors - a.Visitors).slice(0,4);
   
   
 	/* **************************************************
