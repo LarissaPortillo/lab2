@@ -6,14 +6,30 @@ fetch("./attractions.json")
   .then(response => response.json())
   .then(data => {
 		attractions = data;
-		console.log('attractions - (a)', attractions);
+		console.log(attractions);
 	});
 
 
+let first_five;
 
 function filterData(category) {
-  //category = event.target.value;
-  attractions.sort((a,b) => b.Visitors - a.Visitors);
+  category = event.target.value;
+  if(category ===all){
+    attractions.sort(function(a,b){
+      return b.Visitors-a.Visitors;
+    });
+  first_five=attractions.slice(0,4);
+  console.log ('1st 5',first_five);
+  }
+  else{
+    let type=attractions.filter(function(a){
+      reutrn a.Category==category;
+    });
+    first_five=type.slice(0,4);
+    console.log('2nd 5',first_five);
+    
+  }
+  //attractions.sort((a,b) => b.Visitors - a.Visitors).slice(0,4);
   
   
 	/* **************************************************
@@ -36,9 +52,6 @@ function filterData(category) {
 
 
 
-let numbers= [{"w": "love","num":0},{"w": "sick","num":1},{"w":"do","num":2},{"w":"that","num":9},{"w":"domt","num":5}]
-
-console.log('numbers',filterData(attractions));
 
 
 // TODO: Define an event listener for the dropdown menu
