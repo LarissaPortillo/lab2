@@ -6,19 +6,23 @@ fetch("./attractions.json")
   .then(response => response.json())
   .then(data => {
 		attractions = data;
-		console.log(attractions);
-	});
+		console.log('a',attractions);
+	}).then(attractions.sort(function(a,b){
+    return b.Visitors - a.Visitors; 
+  }).slice(0,4));
 
-
+console.log('top', attractions);
 
 
 
 
 
 function filterData(category) {
-  attractions.sort(function d(a,b){
-  return b.Visitors-b.Visitors; 
-});
+  attractions.sort(function(a,b){
+    return b.Visitors - a.Visitors; 
+  }).slice(0,4);
+  
+  console.log('order',attractions);
 
   //attractions.sort((a,b) => b.Visitors - a.Visitors).slice(0,4);
   
