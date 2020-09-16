@@ -9,9 +9,11 @@ fetch("./attractions.json")
 		console.log('attractions - (a)', attractions);
 	});
 
+
+
 function filterData(category) {
-  category = event.target.value;
-  category.sort((a,b) => b.Visitors - a.Visitors);
+  //category = event.target.value;
+  attractions.sort((a,b) => b.Visitors - a.Visitors);
   
   
 	/* **************************************************
