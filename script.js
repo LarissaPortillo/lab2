@@ -9,12 +9,10 @@ fetch("./attractions.json")
 		console.log('attractions - (a)', attractions);
 	});
 
-function d (a,b){
-  return b.Visitors - a.Visitors;
-}
+
 
 function filterData(category) {
-  category.sort(d);
+  
   
   
 	/* **************************************************
@@ -35,7 +33,7 @@ function filterData(category) {
   
 }
 
-console.log(filterData(attractions));
+console.log('top 5 attractions based on visitors', filterData());
 
 // TODO: Define an event listener for the dropdown menu
 //       Call filterData with the selected category
