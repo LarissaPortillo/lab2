@@ -12,7 +12,7 @@ fetch("./attractions.json")
   .then(data => {
 		attractions = data;
 		console.log('a',attractions);})
-  .then(attractions.;
+  .then(filterData(attractions));
 
 
 
@@ -22,7 +22,7 @@ let nums=[{"w":"love", "n":5},{"w":"go", "n":3},{"w": "die", "n":7}];
   
 
 
-function sortByVisitor(a,b){
+function SortByVisitors(a,b){
   return b.Visitors-a.Visitors;
 }
 
@@ -30,8 +30,8 @@ console.log('num',nums.sort(function(a,b){return b.n-a.n;}).slice(0,2));
 
 
 function filterData(category) {
-  let sorted;
-  return 
+  category=event.target.value;
+  return category.sort(SortByVisitors).slice(0,5);
   //category.sort((a,b) => b.Visitors - a.Visitors).slice(0,4);
   
   
