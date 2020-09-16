@@ -4,7 +4,7 @@
 
 
 function filterData(category) {
-  category.sort((a,b) => b.Visitors - a.Visitors).slice(0,4);
+  category.sort((a,b) => b.num - a.num);
   
   
 	/* **************************************************
@@ -31,9 +31,11 @@ fetch("./attractions.json")
   .then(data => {
 		attractions = data;
 		console.log('attractions - (a)', attractions);
-	}).filterData(attractions);
+	});
 
+let numbers= [{"w": "love","num":0},{"w": "sick","num":1},{"w":"do","num":2},{"w":"that","num":9},{"w":"domt","num":5}]
 
+console.log('numbers',filterData(numbers));
 
 // TODO: Define an event listener for the dropdown menu
 //       Call filterData with the selected category
