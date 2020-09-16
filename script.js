@@ -9,24 +9,25 @@ fetch("./attractions.json")
 		console.log('a',attractions);
 	});
 
-function d(category){
-  category.sort
-  }
-}
 
-let nums=[{"w":'love', "n":5},{"w":'go', "n":3},{"w": 'die', "n":7}];
 
-console.log('num',nums.sort(d("n")));
+
+  
+let nums=[{"w":"love", "n":5},{"w":"go", "n":3},{"w": "die", "n":7}];
+  ;
+
+
+
+
+console.log('num',nums.sort(function(a,b){return b.n-a.n;}).slice(0,2));
 
 
 
 
 function filterData(category) {
-  attractions.sort(function(a,b){
-    return b.Visitors - a.Visitors; 
-  }).slice(0,4);
+
   
-  console.log('order',attractions);
+  console.log('order',attractions.sort(function(a,b){return b.Visitors-a.Visitors;}).slice(0,2));
 
   //attractions.sort((a,b) => b.Visitors - a.Visitors).slice(0,4);
   
