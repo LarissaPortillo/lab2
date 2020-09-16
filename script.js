@@ -22,15 +22,17 @@ let nums=[{"w":"love", "n":5},{"w":"go", "n":3},{"w": "die", "n":7}];
   
 
 
-
+function sortByVisitor(a,b){
+  return b.Visitors-a.Visitors;
+}
 
 console.log('num',nums.sort(function(a,b){return b.n-a.n;}).slice(0,2));
 
 
 function filterData(category) {
-  
-
-  category.sort((a,b) => b.Visitors - a.Visitors).slice(0,4);
+  let sorted;
+  return 
+  //category.sort((a,b) => b.Visitors - a.Visitors).slice(0,4);
   
   
 	/* **************************************************
