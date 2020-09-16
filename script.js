@@ -12,7 +12,7 @@ fetch("./attractions.json")
   .then(data => {
 		attractions = data;
 		console.log('a',attractions);})
-  .then(filterData(attractions));
+  .then(attractions.;
 
 
 
