@@ -10,7 +10,7 @@ fetch("./attractions.json")
 	});
 
 function filterData(category) {
-  
+  attractions.sort()
 
 	/* **************************************************
 	 *
