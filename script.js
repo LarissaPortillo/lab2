@@ -9,10 +9,12 @@ fetch("./attractions.json")
 		console.log('attractions - (a)', attractions);
 	});
 
+function d (a,b){
+  return b.Visitors - a.Visitors;
+}
+
 function filterData(category) {
-  category.sort(function(a,b){
-    return b.Visitors - a.Visitors;
-  });
+  category.sort(d);
   
   
 	/* **************************************************
