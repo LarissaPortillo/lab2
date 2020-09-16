@@ -10,8 +10,11 @@ fetch("./attractions.json")
 	});
 
 function filterData(category) {
-  attractions.sort()
-
+  attractions.sort(function(a,b){
+    return b.price - a.price;
+  }).slice(0,4);
+  
+  
 	/* **************************************************
 	 *
 	 * TODO: filter attractions by the selected category
