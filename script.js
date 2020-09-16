@@ -10,9 +10,9 @@ fetch("./attractions.json")
 	});
 
 function filterData(category) {
-  attractions.sort(function(a,b){
-    return b.price - a.price;
-  }).slice(0,4);
+  category.sort(function(a,b){
+    return b.Visitors - a.Visitors;
+  });
   
   
 	/* **************************************************
@@ -32,6 +32,8 @@ function filterData(category) {
   
   
 }
+
+console.log(filterData(attractions));
 
 // TODO: Define an event listener for the dropdown menu
 //       Call filterData with the selected category
