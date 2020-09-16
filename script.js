@@ -6,9 +6,8 @@ fetch("./attractions.json")
   .then(data => {
 		attractions = data;
 		console.log('a',attractions);})
-  .then(filterData(attractions)
-);
-
+  .then(filterData(attractions))
+  .then(()=> filterData(attractions));
 
 
 
@@ -25,7 +24,7 @@ console.log('num',nums.sort(function(a,b){return b.n-a.n;}).slice(0,2));
 
 
 function filterData(category) {
-  category=event.target.value;
+  //category=event.target.value;
   return category.sort(SortByVisitors).slice(0,5);
   //category.sort((a,b) => b.Visitors - a.Visitors).slice(0,4);
   
