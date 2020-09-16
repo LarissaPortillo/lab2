@@ -1,18 +1,13 @@
 
 // TODO: load the dataset 
-
-
-
-
-
-
 let attractions;
 fetch("./attractions.json")
   .then(response => response.json())
   .then(data => {
 		attractions = data;
 		console.log('a',attractions);})
-  .then(filterData(attractions));
+  .then(filterData(attractions)
+);
 
 
 
