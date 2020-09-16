@@ -10,25 +10,16 @@ fetch("./attractions.json")
 	});
 
 
-let first_five;
+
+
+
+
 
 function filterData(category) {
-  category = event.target.value;
-  if(category ===all){
-    attractions.sort(function(a,b){
-      return b.Visitors-a.Visitors;
-    });
-  first_five=attractions.slice(0,4);
-  console.log ('1st 5',first_five);
-  }
-  else{
-    let type=attractions.filter(function(a){
-      reutrn a.Category==category;
-    });
-    first_five=type.slice(0,4);
-    console.log('2nd 5',first_five);
-    
-  }
+  attractions.sort(function d(a,b){
+  return b.Visitors-b.Visitors; 
+});
+
   //attractions.sort((a,b) => b.Visitors - a.Visitors).slice(0,4);
   
   
