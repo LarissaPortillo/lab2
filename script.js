@@ -33,7 +33,7 @@ function filterData(category) {
   
 }
 
-console.log('top 5 attractions based on visitors', filterData());
+console.log('top 5 attractions based on visitors', attractions.sort((a,b) => b.Visitors - a.Visitors));
 
 // TODO: Define an event listener for the dropdown menu
 //       Call filterData with the selected category
