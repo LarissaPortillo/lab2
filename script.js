@@ -1,18 +1,10 @@
 // TODO: load the dataset 
 
 
-let attractions;
-fetch("./attractions.json")
-  .then(response => response.json())
-  .then(data => {
-		attractions = data;
-		console.log('attractions - (a)', attractions);
-	});
-
 
 
 function filterData(category) {
-  
+  category.sort((a,b) => b.Visitors - a.Visitors).slice(0,4);
   
   
 	/* **************************************************
@@ -33,7 +25,15 @@ function filterData(category) {
   
 }
 
-console.log('top 5 attractions based on visitors', attractions.sort((a,b) => b.Visitors - a.Visitors));
+let attractions;
+fetch("./attractions.json")
+  .then(response => response.json())
+  .then(data => {
+		attractions = data;
+		console.log('attractions - (a)', attractions);
+	}).filterData(attractions);
+
+
 
 // TODO: Define an event listener for the dropdown menu
 //       Call filterData with the selected category
