@@ -5,27 +5,14 @@ fetch("./attractions.json")
   .then(response => response.json())
   .then(data => {
 		attractions = filterData(data);
-		console.log('a',attractions)
+		console.log('a',attractions);
+    renderBarChart(attractions);
 });
 
 
 
-  
-let nums=[{"w":"love", "n":5},{"w":"go", "n":3},{"w": "die", "n":7}];
-  
-
-
-
-
-console.log('num',nums.sort(function(a,b){return b.n-a.n;}).slice(0,2));
-
-
 function filterData(category) {
-  
-  return category.sort((a,b) => b.Visitors- a.Visitors).slice(0,5);
-  //category.sort((a,b) => b.Visitors - a.Visitors).slice(0,4);
-  
-  
+
 	/* **************************************************
 	 *
 	 * TODO: filter attractions by the selected category
@@ -39,15 +26,15 @@ function filterData(category) {
 	 * - the max. length of 'data' is 5
 	 *
 	 * **************************************************/
-  
-  
+  return category.sort((a,b) => b.Visitors- a.Visitors).slice(0,5);
   
 }
 
-console.log('top',filterData(attractions));
 
 
 
 
 // TODO: Define an event listener for the dropdown menu
 //       Call filterData with the selected category
+
+document.querySelector("attraction-category")
