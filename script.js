@@ -15,7 +15,15 @@ fetch("./attractions.json")
 
 
 function filterData(category) {
-  category= category.filter(c=> c.Category == event.target.value);
+  
+  if (event.target.value == all){
+    return category.sort((a,b) => b.Visitors- a.Visitors).slice(0,5);
+  }
+  else{
+    category= category.filter(c=> c.Category == event.target.value);
+    return category.sort((a,b) => b.Visitors- a.Visitors).slice(0,5);
+  }
+  
 	/* **************************************************
 	 *
 	 * TODO: filter attractions by the selected category
@@ -29,7 +37,7 @@ function filterData(category) {
 	 * - the max. length of 'data' is 5
 	 *
 	 * **************************************************/
-  return category.sort((a,b) => b.Visitors- a.Visitors).slice(0,5);
+  
   
 }
 
@@ -40,4 +48,4 @@ function filterData(category) {
 // TODO: Define an event listener for the dropdown menu
 //       Call filterData with the selected category
 
-//document.querySelector('#attraction-category').addEventListener('change',filterData(event.target.value)
+//document.querySelector('#attraction-category').addEventListener('change',filterData)
