@@ -16,8 +16,9 @@ fetch("./attractions.json")
 
 
 function filterData(category) {
-  let e = document.querySelector("attraction-category");
-  let value = e.options[e.selectedIndex].value;
+  let c = document.querySelector("attraction-category");
+  category= c.addEventListener('change',category.filter(c=> c.Category == event.target.value) )
+  let value = c.options[c.selectedIndex].value;
   //return category.sort((a,b) => b.Visitors- a.Visitors).slice(0,5);
   //let value= event.target.value;
   if (value == "all"){
