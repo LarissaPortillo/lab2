@@ -6,7 +6,7 @@ fetch("./attractions.json")
   .then(data => {
     
 		attractions = filterData(data);
-    //document.querySelector('#attraction-category').addEventListener('change',filterData);
+    //document.querySelector('#attraction-category').addEventListener('change',filterData(data));
    
   
 		console.log('a',attractions);
@@ -16,13 +16,15 @@ fetch("./attractions.json")
 
 
 function filterData(category) {
+  let e = document.querySelector("attraction-category");
+  let value = e.options[e.selectedIndex].value;
   //return category.sort((a,b) => b.Visitors- a.Visitors).slice(0,5);
-  let value= event.target.value;
-  if (value == all){
+  //let value= event.target.value;
+  if (value == "all"){
     return category.sort((a,b) => b.Visitors- a.Visitors).slice(0,5);
   }
   else{
-    return category.filter(c=> c.Category == event.target.value).sort((a,b) => b.Visitors- a.Visitors).slice(0,5);
+    return category.filter(c=> c.Category == value).sort((a,b) => b.Visitors- a.Visitors).slice(0,5);
   }
   
 	/* **************************************************
