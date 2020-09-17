@@ -4,7 +4,10 @@ let attractions;
 fetch("./attractions.json")
   .then(response => response.json())
   .then(data => {
-		attractions = filterData(data);
+		//attractions = filterData(data);
+  
+    attractions= document.querySelector('#attraction-category').addEventListener('change',filterData(data))
+  
 		console.log('a',attractions);
     renderBarChart(attractions);
 });
@@ -37,4 +40,4 @@ function filterData(category) {
 // TODO: Define an event listener for the dropdown menu
 //       Call filterData with the selected category
 
-document.querySelector('#attraction-category').addEventListener('change',filterData(event.target.value))
+//document.querySelector('#attraction-category').addEventListener('change',filterData(data))
