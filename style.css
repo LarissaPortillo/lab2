@@ -3,7 +3,7 @@
 /****************/
 
 body {
-  background-color: #e1e3e4;
+  background-color: black;
   font-family: 'Roboto', sans-serif;
 }
 
@@ -29,7 +29,7 @@ h2 {
 
 .user-control #attraction-category {
   display: inline-block;
-  background: transparent;
+  background: white;
   max-width: 200px;
   border: 1px solid #75D4CA;
   outline: none;
@@ -97,6 +97,7 @@ h2 {
     -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
     pointer-events: none;
+    border-bottom: 5px dotted black;
 }
 #tooltip.hidden {
     display: none;
