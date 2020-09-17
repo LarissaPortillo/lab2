@@ -6,8 +6,8 @@ fetch("./attractions.json")
   .then(data => {
     
 		attractions = data;
-    document.querySelector('#attraction-category').addEventListener('change');
-   
+    console.log('selector',document.querySelector('#attraction-category').addEventListener('change',filterData(this)));
+    
 		console.log('a',attractions);
     renderBarChart(data);
 });
