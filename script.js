@@ -15,7 +15,7 @@ fetch("./attractions.json")
 
 
 function filterData(category) {
-
+  category= category.filter(c=> c.Category == event.target.value);
 	/* **************************************************
 	 *
 	 * TODO: filter attractions by the selected category
@@ -40,4 +40,4 @@ function filterData(category) {
 // TODO: Define an event listener for the dropdown menu
 //       Call filterData with the selected category
 
-//document.querySelector('#attraction-category').addEventListener('change',filterData(data))
+//document.querySelector('#attraction-category').addEventListener('change',filterData(event.target.value)
