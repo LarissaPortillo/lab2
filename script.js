@@ -4,9 +4,10 @@ let attractions;
 fetch("./attractions.json")
   .then(response => response.json())
   .then(data => {
+    
 		attractions = filterData(data);
-  
-    //attractions= document.querySelector('#attraction-category').addEventListener('change',filterData(data))
+    //document.querySelector('#attraction-category').addEventListener('change',filterData);
+   
   
 		console.log('a',attractions);
     renderBarChart(attractions);
@@ -15,13 +16,13 @@ fetch("./attractions.json")
 
 
 function filterData(category) {
-  
-  if (event.target.value == all){
+  //return category.sort((a,b) => b.Visitors- a.Visitors).slice(0,5);
+  let value= event.target.value;
+  if (value == all){
     return category.sort((a,b) => b.Visitors- a.Visitors).slice(0,5);
   }
   else{
-    category= category.filter(c=> c.Category == event.target.value);
-    return category.sort((a,b) => b.Visitors- a.Visitors).slice(0,5);
+    return category.filter(c=> c.Category == event.target.value).sort((a,b) => b.Visitors- a.Visitors).slice(0,5);
   }
   
 	/* **************************************************
